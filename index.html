@@ -13,16 +13,17 @@
 <meta property="og:image" content="https://a-student-for-life.github.io/Research_Papers/img/tars_thumb.jpg">
 <meta name="twitter:card" content="summary">
 <!-- Google Scholar indexing -->
-<meta name="citation_title" content="TARS: A Framework for Marine Oil Spill Triage Using AIS Anomaly Detection and SAR Browse Imagery">
+<meta name="citation_title" content="TARS: a framework for marine oil spill triage using AIS anomaly detection and SAR browse imagery">
 <meta name="citation_author" content="Miranda, Janice">
 <meta name="citation_author" content="Nair, Navya">
 <meta name="citation_author" content="Shringare, Gargi">
 <meta name="citation_author" content="Hussain, Nazeefa">
 <meta name="citation_author" content="Bhadange, Kirti">
-<meta name="citation_author" content="Tripathy, Amiya">
+<meta name="citation_author" content="Tripathy, Amiya Kumar">
 <meta name="citation_journal_title" content="Applied Geomatics">
 <meta name="citation_publisher" content="Springer Nature">
 <meta name="citation_publication_date" content="2026">
+<meta name="citation_doi" content="10.1007/s12518-026-00837-5">
 <meta name="citation_pdf_url" content="https://a-student-for-life.github.io/Research_Papers/papers/TARS_accepted_manuscript.pdf">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -83,6 +84,7 @@
           background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; cursor: pointer; }
   .pub-links { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 0.92rem; font-weight: 500; }
   .pub-links span { color: var(--muted); font-weight: 400; }
+  .cite-text { font-size: 0.86rem; line-height: 1.5; margin: 10px 0 8px; overflow-wrap: anywhere; }
   .note { color: var(--muted); font-size: 0.8rem; margin: 14px 0 0; }
 
   footer { color: var(--muted); font-size: 0.82rem; padding-top: 40px; }
@@ -115,35 +117,36 @@
     <a href="papers/TARS_accepted_manuscript.pdf"><img src="img/tars_thumb.jpg" alt="Sentinel-1 browse image crop of a coastal area with an oil slick, from the TARS paper"></a>
     <div>
       <span class="tag tag-type">JOURNAL ARTICLE</span> <span class="tag">ACCEPTED 2026</span>
-      <p class="pub-title">TARS: A Framework for Marine Oil Spill Triage Using AIS Anomaly
-      Detection and SAR Browse Imagery</p>
-      <p class="pub-meta"><strong>J. Miranda</strong>, N. Nair, G. Shringare, N. Hussain,
-      K. Bhadange, A. Tripathy</p>
+      <p class="pub-title">TARS: a framework for marine oil spill triage using AIS anomaly detection and SAR browse imagery</p>
+      <p class="pub-meta"><strong>Janice Miranda</strong>, Navya Nair, Gargi Shringare, Nazeefa Hussain,
+      Kirti Bhadange and Amiya Kumar Tripathy</p>
       <p class="pub-venue"><span class="journal">Applied Geomatics</span> <span class="publisher">Springer Nature</span></p>
       <p class="summary">Uses ship-tracking (AIS) anomalies to decide where to look, then checks
       free Sentinel-1 preview images, about 3,400 times smaller than the full radar product,
       for oil around the flagged vessel. Tested on expert-labelled slicks from two regions.</p>
       <div class="pub-links">
+        <a href="https://doi.org/10.1007/s12518-026-00837-5">Published article (DOI)</a>
         <a href="papers/TARS_accepted_manuscript.pdf">Accepted manuscript (PDF)</a>
+        <a href="https://github.com/a-student-for-life/TARS-triage">Code (GitHub)</a>
         <a href="img/tars_overview.png">System overview</a>
-        <span>Code: released on publication</span>
       </div>
       <details class="cite">
-        <summary>Cite (BibTeX)</summary>
+        <summary>Cite</summary>
+        <p class="cite-text" id="txt-tars">Miranda J, Nair N, Shringare G, Hussain N, Bhadange K, Tripathy AK (2026) TARS: a framework for marine oil spill triage using AIS anomaly detection and SAR browse imagery. Applied Geomatics. https://doi.org/10.1007/s12518-026-00837-5</p>
         <div class="cite-box">
 <pre id="bib-tars">@article{miranda2026tars,
-  title   = {TARS: A Framework for Marine Oil Spill Triage Using AIS Anomaly Detection and SAR Browse Imagery},
-  author  = {Miranda, Janice and Nair, Navya and Shringare, Gargi and Hussain, Nazeefa and Bhadange, Kirti and Tripathy, Amiya},
-  journal = {Applied Geomatics},
+  title     = {{TARS}: a framework for marine oil spill triage using {AIS} anomaly detection and {SAR} browse imagery},
+  author    = {Miranda, Janice and Nair, Navya and Shringare, Gargi and Hussain, Nazeefa and Bhadange, Kirti and Tripathy, Amiya Kumar},
+  journal   = {Applied Geomatics},
   publisher = {Springer Nature},
-  year    = {2026},
-  note    = {Accepted}
+  year      = {2026},
+  doi       = {10.1007/s12518-026-00837-5}
 }</pre>
           <button class="copy" type="button" data-target="bib-tars">Copy</button>
         </div>
       </details>
-      <p class="note">The PDF is the accepted manuscript, not the Version of Record. A link to
-      the published article will be added when it is available.</p>
+      <p class="note">The PDF is the accepted manuscript, not the Version of Record, which is
+      available at the DOI link above.</p>
     </div>
   </article>
 
