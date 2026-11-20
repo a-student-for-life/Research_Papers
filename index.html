@@ -126,8 +126,6 @@
              linear-gradient(var(--rule), var(--rule)) left bottom / 100% 1px no-repeat; transition: background-size .3s ease, color .15s; }
   .links a:hover { background-size: 100% 1.5px, 100% 1px; color: var(--ocean); }
   .thumb { position: relative; }
-  .thumb::after { content: ""; position: absolute; inset: 0; background: var(--ocean); mix-blend-mode: color; opacity: .55; transition: opacity .35s; }
-  .thumb:hover::after { opacity: 0; }
   .pub { padding: 22px; margin: -22px; border-radius: 14px; transition: background .25s, box-shadow .25s, transform .25s; }
   .pub:hover { background: rgba(255,255,255,.7); box-shadow: 0 10px 30px rgba(28,27,25,.07); transform: translateY(-2px); }
   .btn .arr { display: inline-block; transition: transform .2s; }
