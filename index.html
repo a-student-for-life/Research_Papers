@@ -130,6 +130,17 @@
   .pub:hover { background: rgba(255,255,255,.7); box-shadow: 0 10px 30px rgba(28,27,25,.07); transform: translateY(-2px); }
   .btn .arr { display: inline-block; transition: transform .2s; }
   .btn:hover .arr { transform: translateX(3px); }
+  .lightbox { border: 0; padding: 18px; border-radius: 14px; background: var(--card); max-width: min(1100px, 94vw);
+              box-shadow: 0 24px 70px rgba(28,27,25,.25); }
+  .lightbox::backdrop { background: rgba(28,27,25,.45); backdrop-filter: blur(3px); }
+  .lightbox[open] { animation: pop .22s cubic-bezier(.2,.7,.2,1); }
+  @keyframes pop { from { opacity: 0; transform: scale(.97); } to { opacity: 1; transform: none; } }
+  .lb-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .lb-head p { margin: 0; font: 500 1.15rem "Newsreader", Georgia, serif; }
+  .lb-close { padding: 5px 10px; font-size: 0.8rem; }
+  .lightbox img { display: block; width: 100%; height: auto; max-height: 78vh; object-fit: contain; }
+  .lb-hint { display: none; margin: 10px 0 0; font-size: 0.8rem; color: var(--faint); }
+  @media (max-width: 640px) { .lb-hint { display: block; } }
   footer { border-top: 1px solid var(--rule); margin-top: 64px; padding-top: 22px; color: var(--faint); font-size: 0.82rem; }
 
   @media (max-width: 640px) {
@@ -177,7 +188,7 @@
         <a class="btn primary" href="https://rdcu.be/mXU4jmgRC9Ua">Read the paper <span class="arr" aria-hidden="true">&rarr;</span></a>
         <a class="btn" href="https://doi.org/10.1007/s12518-026-00837-5">DOI</a>
         <a class="btn" href="https://github.com/a-student-for-life/TARS-triage">Code</a>
-        <a class="btn" href="img/tars_overview.png">System overview</a>
+        <a class="btn" href="img/tars_overview.png" data-lightbox="overview">System overview</a>
         <button class="btn cite-toggle" type="button" aria-expanded="false" aria-controls="cite-tars">Cite</button>
       </div>
         <div class="cite-panel" id="cite-tars" hidden>
@@ -210,7 +221,20 @@
 
   <footer>Last updated November 2026.</footer>
 </main>
+
+<dialog class="lightbox" id="overview" aria-label="TARS system overview">
+  <div class="lb-head"><p>TARS system overview</p><button class="btn lb-close" type="button" aria-label="Close">Close &times;</button></div>
+  <a href="img/tars_overview.png" target="_blank" rel="noopener" title="Open full size"><img src="img/tars_overview.png" alt="TARS pipeline: AIS reports, validation, three anomaly layers, escalation, Sentinel-1 browse image search, 25 km crop, regional classifier head and verdict for analyst review, with an append-only event log"></a>
+  <p class="lb-hint">Tap the diagram to open it full size.</p>
+</dialog>
 <script>
+document.querySelectorAll('[data-lightbox]').forEach(function (l) {
+  var d = document.getElementById(l.dataset.lightbox);
+  if (!d || !d.showModal) return;
+  l.addEventListener('click', function (e) { e.preventDefault(); d.showModal(); });
+  d.querySelector('.lb-close').addEventListener('click', function () { d.close(); });
+  d.addEventListener('click', function (e) { if (e.target === d) d.close(); });
+});
 document.querySelectorAll('.cite-toggle').forEach(function (b) {
   b.addEventListener('click', function () {
     var p = document.getElementById(b.getAttribute('aria-controls'));
